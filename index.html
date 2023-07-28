@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>BattleSquare.io</title>
+    <script src="./util.js"></script>
+    <script src="./explosion.js"></script>
+    <script src="./setup.js"></script>
+    <script src="./bot.js"></script>
+    <script src="./game.js"></script>
+    <script src="./init.js" defer></script>
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="start">
+        <div id="startTitle">
+          <div>
+            <img src="/assets/battlesquare.png" alt="logo" />
+          </div>
+          <div class="logoText">
+            <h1 class="blue">BattleSquare</h1>
+            <h1>.</h1>
+            <h1 class="red">io</h1>
+          </div>
+        </div>
+        <div id="startOptions">
+          <button onclick="showStartPage('levels')">PLAY</button>
+          <a
+            href="https://github.com/thiagokroger/battlesquare#how-to-play"
+            target="_blank"
+            class="button"
+            >LEARN</a
+          >
+          <button onclick="showStartPage('settings')">SETTINGS</button>
+          <button onclick="showStartPage('about')">ABOUT</button>
+        </div>
+        <div id="startLevels">
+          <button onclick="start('easy')">EASY</button>
+          <button onclick="start('medium')">MEDIUM</button>
+          <button onclick="start('hard')">HARD</button>
+          <button onclick="showStartPage('options')">GO BACK</button>
+        </div>
+        <div id="startSettings">
+          <button onclick="toggleSettings('sound')">
+            SOUND: <span id="settingsSound"></span>
+          </button>
+          <button onclick="toggleSettings('transitions')">
+            TRANSITIONS: <span id="settingsTransitions"></span>
+          </button>
+          <button onclick="toggleSettings('speed')">
+            SPEED: <span id="settingsSpeed"></span>
+          </button>
+          <button onclick="showStartPage('options')">GO BACK</button>
+        </div>
+        <div id="startAbout">
+          <a href="https://www.thiago.kr/" target="_blank" class="button"
+            >AUTHOR</a
+          >
+          <a
+            href="https://github.com/thiagokroger/battlesquare"
+            target="_blank"
+            class="button"
+            >SOURCE CODE</a
+          >
+          <button onclick="showStartPage('options')">GO BACK</button>
+        </div>
+      </div>
+      <div id="game">
+        <div id="toolbar">
+          <div id="finishTurn">
+            <button onclick="finishTurn()">Finish Turn</button>
+          </div>
+          <div id="moves"></div>
+        </div>
+        <div id="board"></div>
+        <div id="bottombar">
+          <div id="frostMines"></div>
+          <div id="timer"></div>
+        </div>
+      </div>
+      <div id="result">
+        <div id="resultTitle">
+          <div class="logoText">
+            <h1 class="blue">BattleSquare</h1>
+            <h1>.</h1>
+            <h1 class="red">io</h1>
+          </div>
+        </div>
+        <div id="resultWinner"></div>
+        <div id="resultLevel"></div>
+        <div id="resultBoard"></div>
+        <div id="resultInfo"></div>
+        <button onclick="window.location.href=window.location.href">
+          RESTART
+        </button>
+      </div>
+      <div id="turnTransition">
+        <div id="turnTransitionTurn"></div>
+        <div id="turnTransitionPlayer"></div>
+        <div id="turnTransitionMoves"></div>
+      </div>
+    </div>
+    <div id="glass"></div>
+    <div id="fade"></div>
+  </body>
+</html>
